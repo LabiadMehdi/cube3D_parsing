@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mehdi <mehdi@student.42.fr>                +#+  +:+       +#+         #
+#    By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/02 16:40:19 by ellabiad          #+#    #+#              #
-#    Updated: 2025/11/02 02:33:25 by mehdi            ###   ########.fr        #
+#    Updated: 2026/03/05 13:57:18 by ellabiad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ $(NAME): $(OBJS)
 	@echo "✅ Build complete!"
 
 %.o: %.c
-	@echo "🛠  Compiling $<"
 	@$(CC) $(CFLAGS) -I . -I ft_printf -I ft_printf/src -I get_next_line -c $< -o $@
 
 clean:
