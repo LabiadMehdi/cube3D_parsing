@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/05 12:39:00 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/05 14:25:45 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_game
 	double	dir_x;
 	double	dir_y;
 	double	plane_x;
-	double	plance_y;
+	double	plane_y;
 }	t_game;
 
 #endif
