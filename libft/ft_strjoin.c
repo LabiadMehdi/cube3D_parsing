@@ -3,52 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 14:58:15 by ellabiad          #+#    #+#             */
-/*   Updated: 2025/04/03 23:20:12 by marvin           ###   ########.fr       */
+/*   Updated: 2026/03/06 12:30:34 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*t_len_malloc(const char *s1, const char *s2)
-{
-	char	*tmp;
-
-	if (s1 == NULL && s2 == NULL)
-		tmp = malloc(sizeof(char) * 1);
-	else if (s1 == NULL)
-		tmp = malloc(sizeof(char) * (ft_strlen(s2) + 1));
-	else if (s2 == NULL)
-		tmp = malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	else
-		tmp = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!tmp)
-		return (NULL);
-	return (tmp);
-}
-
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		i;
 	int		j;
-	char	*cat;
+	char	*res;
 
 	i = 0;
 	j = 0;
-	cat = t_len_malloc(s1, s2);
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (s1)
 	{
 		while (s1[i])
-			cat[j++] = s1[i++];
+			res[j++] = s1[i++];
 	}
 	i = 0;
 	if (s2)
 	{
 		while (s2[i])
-			cat[j++] = s2[i++];
+			res[j++] = s2[i++];
 	}
-	cat[j] = '\0';
-	return (cat);
+	res[j] = '\0';
+	return (res);
+}
+
+char	*ft_strjoin_free(char *s1, const char *s2)
+{
+	int		i;
+	int		j;
+	char	*res;
+
+	i = 0;
+	j = 0;
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (s1)
+	{
+		while (s1[i])
+			res[j++] = s1[i++];
+	}
+	i = 0;
+	if (s2)
+	{
+		while (s2[i])
+			res[j++] = s2[i++];
+	}
+	res[j] = '\0';
+	if (s1)
+		free(s1);
+	return (res);
 }

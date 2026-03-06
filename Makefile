@@ -1,5 +1,5 @@
 # ==== cube3d_parser Makefile ====
-NAME = cube3d_parser
+NAME = parser
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
@@ -16,8 +16,7 @@ SRC_DIR = src
 SRCS = main.c
 
 # Fichiers d'exécution
-SRCS += $(SRC_DIR)/parser.c \
-		$(SRC_DIR)/utils.c 
+SRCS += $(SRC_DIR)/checker/path.c
 
 # Les .o gardent la même structure de dossiers dans obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))

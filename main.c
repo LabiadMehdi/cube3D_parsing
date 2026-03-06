@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 13:53:14 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/05 13:56:01 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:34:47 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/cube3d_parser.h"
+#include "include/parser.h"
 
-int main(void)
+int main(int ac, char **av)
 {
-	char *line = ft_strjoin(NULL, "Hello world!\n");
-	ft_printf("%s", line);
+	char *filename;
+
+	if (ac != 2)
+		return (1);
+	filename = av[1];
+	check_open(filename);
 	return (0);
 }

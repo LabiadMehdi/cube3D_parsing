@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube3d_parser.h                                    :+:      :+:    :+:   */
+/*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/05 14:25:45 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:33:58 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUBE3D_PARSER_H
-# define CUBE3D_PARSER_H
+#ifndef PARSER_H
+# define PARSER_H
 
-#include "../libft/libft.h"
+# include "../libft/libft.h"
 
-typedef struct s_game
+typedef struct s_map
 {
 	char	*no;
 	char	*so;
@@ -24,14 +24,18 @@ typedef struct s_game
 	int		floor[3];
 	int		ceiling[3];
 	char	**map;
-	int		map_width;
-	int		map_heigth;
-	double	pos_x;
-	double	pos_y;
-	double	dir_x;
-	double	dir_y;
-	double	plane_x;
-	double	plane_y;
-}	t_game;
+	int		map_w;
+	int		map_h;
+	// double	pos_x;
+	// double	pos_y;
+	// double	dir_x;
+	// double	dir_y;
+	// double	plane_x;
+	// double	plane_y;
+}	t_map;
+
+//--Checker
+int	check_extension(char *filename);
+int	check_open(char *filename);
 
 #endif
