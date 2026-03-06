@@ -16,7 +16,9 @@ SRC_DIR = src
 SRCS = main.c
 
 # Fichiers d'exécution
-SRCS += $(SRC_DIR)/checker/path.c
+SRCS += $(SRC_DIR)/checker/path.c \
+		$(SRC_DIR)/checker/file_content.c \
+		$(SRC_DIR)/filler/map_filler.c
 
 # Les .o gardent la même structure de dossiers dans obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))

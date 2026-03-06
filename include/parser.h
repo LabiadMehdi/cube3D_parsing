@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/06 14:33:58 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/06 15:34:15 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,12 @@ typedef struct s_map
 	// double	plane_y;
 }	t_map;
 
-//--Checker
-int	check_extension(char *filename);
-int	check_open(char *filename);
+//-- Checker
+int		check_extension(char *filename);
+int		check_open(char *filename);
+char	**read_all(int fd);
+
+//-- Filler
+
 
 #endif
