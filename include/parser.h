@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/06 15:34:15 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/07 09:49:22 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ typedef struct s_map
 	char	*so;
 	char	*we;
 	char	*ea;
-	int		floor[3];
-	int		ceiling[3];
+	int		floor;
+	int		ceiling;
+	int		floor_set;
+	int		ceiling_set;
 	char	**map;
 	int		map_w;
 	int		map_h;
@@ -40,6 +42,9 @@ int		check_open(char *filename);
 char	**read_all(int fd);
 
 //-- Filler
-
+int		check_parsed_elements(t_map *map);
+t_map	*data_filler(char **file);
+int		parse_elements(char *line, t_map *map, int line_idx);
+void	free_map(t_map *map);
 
 #endif

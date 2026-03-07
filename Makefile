@@ -18,7 +18,12 @@ SRCS = main.c
 # Fichiers d'exécution
 SRCS += $(SRC_DIR)/checker/path.c \
 		$(SRC_DIR)/checker/file_content.c \
-		$(SRC_DIR)/filler/map_filler.c
+		$(SRC_DIR)/filler/data_filler.c \
+		$(SRC_DIR)/filler/check_parsed.c \
+		$(SRC_DIR)/filler/parse_colors.c \
+		$(SRC_DIR)/filler/parse_elements.c \
+		$(SRC_DIR)/filler/parse_map.c \
+		$(SRC_DIR)/filler/parse_textures.c
 
 # Les .o gardent la même structure de dossiers dans obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))

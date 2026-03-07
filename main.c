@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 13:53:14 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/06 14:34:47 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/07 10:01:51 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,24 @@
 
 int main(int ac, char **av)
 {
-	char *filename;
+	char	*filename;
+	char	**content;
+	int		fd;
+	t_map	*map;
 
 	if (ac != 2)
 		return (1);
 	filename = av[1];
-	check_open(filename);
+	if (!check_extension(filename))
+		return (printf("Error: wrong file extension"), 1);
+	fd = check_open(filename);
+	if (fd < 0)
+		return (1);
+	content = read_all(fd);
+	if (!content)
+		return (1);
+	map = data_filler(content);
+	ft_free_tab(content);
+	free_map(map);
 	return (0);
 }

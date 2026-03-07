@@ -69,7 +69,7 @@ char	**read_all(int fd)
 		arr = ft_realoc(arr, line);
 		free(line);
 		if (!arr)
-			return (NULL);
+			return (perror("malloc"), NULL);
 	}
 	return (arr);
 }
