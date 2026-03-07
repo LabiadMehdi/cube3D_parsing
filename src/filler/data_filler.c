@@ -29,6 +29,8 @@ void	set_map(t_map *map)
 
 void	free_map(t_map *map)
 {
+	if (!map)
+		return ;
 	if (map->no)
 		free(map->no);
 	if (map->so)
@@ -54,10 +56,10 @@ t_map	*data_filler(char **file)
 	set_map(map);
 	while (parse_elements(file[i], map, i))
 		i++;
-	// if (check_parsed_elements(map) == -1)
-	// 	return (printf("Error: one or more textures missing\n"), NULL);
-	// if (check_parsed_elements(map) == -2)
-	// 	return (printf("Error: one or more colors missing\n"), NULL);
+	if (check_parsed_elements(map) == -1)
+		return (printf("Error: one or more textures missing\n"), NULL);
+	if (check_parsed_elements(map) == -2)
+		return (printf("Error: one or more colors missing\n"), NULL);
+	parse_map(file + i, map);
 	return (map);
-	// parse_map(file + i, map);
 }

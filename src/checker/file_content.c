@@ -64,8 +64,11 @@ char	**read_all(int fd)
 	char	**arr;
 
 	arr = NULL;
-	while ((line = get_next_line(fd)))
+	while (1)
 	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
 		arr = ft_realoc(arr, line);
 		free(line);
 		if (!arr)

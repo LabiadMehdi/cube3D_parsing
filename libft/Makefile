@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ellabiad <ellabiad@student.42.fr>          +#+  +:+       +#+         #
+#    By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/02 16:40:19 by ellabiad          #+#    #+#              #
-#    Updated: 2026/03/05 13:57:18 by ellabiad         ###   ########.fr        #
+#    Updated: 2026/03/07 12:03:42 by ellabiad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,6 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) -I . -I ft_printf -I ft_printf/src -I get_next_line -c $< -o $@
 
 clean:
-	@echo "🧹 Cleaning object files..."
 	@$(RM) $(OBJS)
 
 fclean: clean

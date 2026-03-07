@@ -23,7 +23,8 @@ SRCS += $(SRC_DIR)/checker/path.c \
 		$(SRC_DIR)/filler/parse_colors.c \
 		$(SRC_DIR)/filler/parse_elements.c \
 		$(SRC_DIR)/filler/parse_map.c \
-		$(SRC_DIR)/filler/parse_textures.c
+		$(SRC_DIR)/filler/parse_textures.c \
+		$(SRC_DIR)/filler/utils.c
 
 # Les .o gardent la même structure de dossiers dans obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
@@ -47,12 +48,10 @@ $(NAME): $(OBJS) $(LIBFT)
 	@echo "✅ Build complete!"
 
 clean:
-	@echo "🧹 Cleaning object files..."
 	@$(RM) -r $(OBJ_DIR)
 	@$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-	@echo "🗑  Removing $(NAME)..."
 	@$(RM) $(NAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean
 

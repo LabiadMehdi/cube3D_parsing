@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 13:53:14 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/07 10:01:51 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/07 11:13:52 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(int ac, char **av)
 	content = read_all(fd);
 	if (!content)
 		return (1);
+	close(fd);
 	map = data_filler(content);
 	ft_free_tab(content);
 	free_map(map);

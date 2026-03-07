@@ -26,22 +26,14 @@ int	check_empty_line(char *s)
 
 int	parse_elements(char *line, t_map *map, int line_idx)
 {
-	(void)map;
-	(void)line_idx;
 	if (ft_strncmp(line, "NO", 2) == 0
 		|| ft_strncmp(line, "SO", 2) == 0
 		|| ft_strncmp(line, "WE", 2) == 0
 		|| ft_strncmp(line, "EA", 2) == 0)
-	{
-		parse_textures(line + 4, map)
-		return (1);
-	}
+		return (parse_textures(line, map));
 	else if (ft_strncmp(line, "F", 1) == 0
-			|| ft_strncmp(line, "C", 1) == 0)
-	{
-		parse_colors(line + 2, map)
-		return (1);
-	}
+		|| ft_strncmp(line, "C", 1) == 0)
+		return (parse_colors(line, map));
 	else if (check_empty_line(line))
 		return (1);
 	if (check_parsed_elements(map))
