@@ -12,38 +12,6 @@
 
 #include "../../include/parser.h"
 
-void	set_map(t_map *map)
-{
-	map->no = NULL;
-	map->so = NULL;
-	map->we = NULL;
-	map->ea = NULL;
-	map->floor = 0;
-	map->ceiling = 0;
-	map->floor_set = 0;
-	map->ceiling_set = 0;
-	map->map = NULL;
-	map->map_w = 0;
-	map->map_h = 0;
-}
-
-void	free_map(t_map *map)
-{
-	if (!map)
-		return ;
-	if (map->no)
-		free(map->no);
-	if (map->so)
-		free(map->so);
-	if (map->we)
-		free(map->we);
-	if (map->ea)
-		free(map->ea);
-	if (map->map)
-		ft_free_tab(map->map);
-	free(map);
-}
-
 t_map	*data_filler(char **file)
 {
 	int		i;

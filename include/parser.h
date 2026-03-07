@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/07 11:21:34 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/07 13:25:49 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,13 @@ char	**read_all(int fd);
 int		check_parsed_elements(t_map *map);
 t_map	*data_filler(char **file);
 int		parse_elements(char *line, t_map *map, int line_idx);
+int		parse_color(char *line, t_map *map);
 void	free_map(t_map *map);
 
-//-- Utils
-int	skip_spaces(char *line);
+//-- Filler Utils
+int		skip_spaces(char *line);
+void	set_map(t_map *map);
+void	free_map(t_map *map);
+char	*trim_nl(char *line);
 
 #endif

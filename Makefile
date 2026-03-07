@@ -1,6 +1,7 @@
 # ==== cube3d_parser Makefile ====
 NAME = parser
 CC = cc
+MAKEFLAGS += --no-print-directory
 
 CFLAGS = -Wall -Wextra -Werror
 

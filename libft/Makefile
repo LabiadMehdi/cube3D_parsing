@@ -6,7 +6,7 @@
 #    By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/02 16:40:19 by ellabiad          #+#    #+#              #
-#    Updated: 2026/03/07 12:03:42 by ellabiad         ###   ########.fr        #
+#    Updated: 2026/03/07 12:07:53 by ellabiad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
+MAKEFLAGS += --no-print-directory
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
        ft_strlen.c ft_memset.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
@@ -54,7 +55,6 @@ clean:
 	@$(RM) $(OBJS)
 
 fclean: clean
-	@echo "🗑  Removing $(NAME)..."
 	@$(RM) $(NAME)
 
 re: fclean all

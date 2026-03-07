@@ -12,24 +12,6 @@
 
 #include "../../include/parser.h"
 
-char	*trim_nl(char *line)
-{
-	char	*path;
-	int		i;
-
-	i = 0;
-	path = malloc(ft_strlen(line) + 1);
-	if (!path)
-		return (perror("malloc"), NULL);
-	while (line[i] && line[i] != '\n')
-	{
-		path[i] = line[i];
-		i++;
-	}
-	path[i] = '\0';
-	return (path);
-}
-
 int	assign_to_identifier(char *line, char *path, t_map *map)
 {
 	if (ft_strncmp(line, "NO", 2) == 0 && !map->no)
@@ -58,7 +40,7 @@ int	assign_to_identifier(char *line, char *path, t_map *map)
 int	parse_textures(char *line, t_map *map)
 {
 	int		fd;
-	int 	offset;
+	int		offset;
 	char	*path;
 
 	offset = skip_spaces(line + 2);
