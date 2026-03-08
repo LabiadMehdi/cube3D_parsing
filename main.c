@@ -6,11 +6,35 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 13:53:14 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/08 18:40:32 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/08 23:09:23 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/parser.h"
+
+void	print_arr(char **arr)
+{
+	int	i = 0;
+	while (arr[i])
+	{
+		printf("%s", arr[i++]);
+		if (arr[i])
+			printf("\n");
+	}
+}
+
+void	print_map(t_map *map)
+{
+	printf("%s\n", map->no);
+	printf("%s\n", map->so);
+	printf("%s\n", map->we);
+	printf("%s\n", map->ea);
+	printf("%i\n", map->floor);
+	printf("%i\n", map->ceiling);
+	print_arr(map->map);
+	printf("\n%i\n", map->map_w);
+	printf("%i\n", map->map_h);
+}
 
 int	main(int ac, char **av)
 {
@@ -35,6 +59,7 @@ int	main(int ac, char **av)
 	ft_free_tab(content);
 	if (!map)
 		return (1);
+	print_map(map);
 	free_map(map);
 	return (0);
 }

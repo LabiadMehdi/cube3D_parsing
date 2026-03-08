@@ -52,11 +52,12 @@ char	*pad_line(char *line, int map_width)
 			res[i] = '1';
 			line++;
 		}
-		else if (line && *line != '\0')
+		else if (line && *line != '\0' && *line != '\n')
 			res[i] = *line++;
 		else
 			res[i] = '1';
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }
