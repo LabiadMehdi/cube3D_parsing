@@ -12,18 +12,6 @@
 
 #include "../../include/parser.h"
 
-int	check_empty_line(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] && (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13)))
-		i++;
-	if (s[i] != '\0')
-		return (0);
-	return (1);
-}
-
 int	parse_elements(char *line, t_map *map, int line_idx)
 {
 	if (ft_strncmp(line, "NO", 2) == 0
@@ -38,5 +26,5 @@ int	parse_elements(char *line, t_map *map, int line_idx)
 		return (1);
 	if (check_parsed_elements(map))
 		return (0);
-	return (printf("Error: at line -> %i : %s\n", line_idx, line), 0);
+	return (printf("Error: at line: %i: %s", line_idx, line), 0);
 }

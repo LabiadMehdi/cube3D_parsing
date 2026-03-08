@@ -12,6 +12,18 @@
 
 #include "../../include/parser.h"
 
+int	check_empty_line(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13)))
+		i++;
+	if (s[i] != '\0')
+		return (0);
+	return (1);
+}
+
 int	skip_spaces(char *line)
 {
 	int	i;
@@ -62,7 +74,7 @@ char	*trim_nl(char *line)
 	i = 0;
 	path = malloc(ft_strlen(line) + 1);
 	if (!path)
-		return (perror("malloc"), NULL);
+		return (printf("Error: %s\n", strerror(errno)), NULL);
 	while (line[i] && line[i] != '\n')
 	{
 		path[i] = line[i];

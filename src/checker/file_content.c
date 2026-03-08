@@ -22,7 +22,7 @@ char	**arr_cpy(char **arr)
 		i++;
 	new_arr = malloc(sizeof(char *) * (i + 2));
 	if (!new_arr)
-		return (perror("Error: malloc"), NULL);
+		return (printf("Error: %s\n", strerror(errno)), NULL);
 	if (!arr)
 	{
 		new_arr[0] = ft_strdup("");
@@ -72,7 +72,7 @@ char	**read_all(int fd)
 		arr = ft_realoc(arr, line);
 		free(line);
 		if (!arr)
-			return (perror("malloc"), NULL);
+			return (printf("Error: %s\n", strerror(errno)), NULL);
 	}
 	return (arr);
 }

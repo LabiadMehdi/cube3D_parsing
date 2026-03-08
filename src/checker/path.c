@@ -28,6 +28,6 @@ int	check_open(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return (perror(filename), fd);
+		return (printf("Error: %s\n", strerror(errno)), fd);
 	return (fd);
 }

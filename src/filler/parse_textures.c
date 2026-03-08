@@ -34,7 +34,7 @@ int	assign_to_identifier(char *line, char *path, t_map *map)
 		map->we = path;
 		return (1);
 	}
-	return (printf("Identifier: \"%s\" declared twice", line), 0);
+	return (printf("Error: identifier declared twice: %s", line), 0);
 }
 
 int	parse_textures(char *line, t_map *map)
@@ -47,7 +47,7 @@ int	parse_textures(char *line, t_map *map)
 	path = trim_nl(line + 2 + offset);
 	fd = check_open(path);
 	if (fd < 0)
-		return (free(path), printf("Error: cannot open \"%s\"", path), 0);
+		return (free(path), 0);
 	close(fd);
 	if (!assign_to_identifier(line, path, map))
 		return (free(path), 0);

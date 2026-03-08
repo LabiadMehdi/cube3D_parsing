@@ -1,5 +1,15 @@
-#fichier test
-*.cub
-
-#program
+# Compiled program
 parser
+
+# Object files
+obj/
+
+# Test files
+test.cub
+texture.txt
+
+# cub3d_tests (fichiers de test locaux)
+cub3d_tests/
+
+# VSCode
+.vscode/

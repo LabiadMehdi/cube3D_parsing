@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/07 13:25:49 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/08 17:07:22 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PARSER_H
 
 # include "../libft/libft.h"
+# include <string.h>
+# include <errno.h>
 
 typedef struct s_map
 {
@@ -45,7 +47,9 @@ char	**read_all(int fd);
 int		check_parsed_elements(t_map *map);
 t_map	*data_filler(char **file);
 int		parse_elements(char *line, t_map *map, int line_idx);
-int		parse_color(char *line, t_map *map);
+int		parse_colors(char *line, t_map *map);
+int		parse_textures(char *line, t_map *map);
+int		parse_map(char **file, int start, t_map *map);
 void	free_map(t_map *map);
 
 //-- Filler Utils
@@ -53,5 +57,16 @@ int		skip_spaces(char *line);
 void	set_map(t_map *map);
 void	free_map(t_map *map);
 char	*trim_nl(char *line);
+int		check_empty_line(char *s);
+
+//-- Filler Utils 2
+int		found_longest_line(char **arr);
+int		arr_size(char **arr);
+char	*pad_line(char *line, int map_width);
+
+//-- Filler Utils 3
+int		check_valid_player(char *s, int *player, int idx);
+int		check_valid_char(char *s, int idx);
+int		check_enclosed_by_wall(char **file);
 
 #endif

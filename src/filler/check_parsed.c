@@ -16,8 +16,8 @@ int	check_parsed_elements(t_map *map)
 {
 	if (map->no == NULL || map->so == NULL
 		|| map->we == NULL || map->ea == NULL)
-		return (-1);
+		return (0);
 	if (map->floor_set == 0 || map->ceiling_set == 0)
-		return (-2);
+		return (0);
 	return (1);
 }

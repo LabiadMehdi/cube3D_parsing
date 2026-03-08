@@ -25,7 +25,9 @@ SRCS += $(SRC_DIR)/checker/path.c \
 		$(SRC_DIR)/filler/parse_elements.c \
 		$(SRC_DIR)/filler/parse_map.c \
 		$(SRC_DIR)/filler/parse_textures.c \
-		$(SRC_DIR)/filler/utils.c
+		$(SRC_DIR)/filler/utils.c \
+		$(SRC_DIR)/filler/utils2.c \
+		$(SRC_DIR)/filler/utils3.c
 
 # Les .o gardent la même structure de dossiers dans obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
