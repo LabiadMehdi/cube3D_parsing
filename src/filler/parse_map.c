@@ -62,7 +62,7 @@ int	parse_map(char **file, int start, t_map *map)
 		parsed_map[i] = pad_line(file[i], longest_line);
 		if (!parsed_map[i])
 			return (printf("Error: %s\n", strerror(errno)),
-			ft_free_tab(parsed_map), 0);
+				ft_free_tab(parsed_map), 0);
 		i++;
 	}
 	map->map = parsed_map;

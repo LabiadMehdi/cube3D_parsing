@@ -26,9 +26,9 @@ int	check_valid_char(char *s, int idx)
 			i++;
 		else
 			return (printf
-			("Error: invalid input detected line %i column %i\n",
-			idx, i + 1),
-			0);
+				("Error: invalid input detected line %i column %i\n",
+					idx, i + 1),
+				0);
 	}
 	return (1);
 }
@@ -46,9 +46,9 @@ int	check_valid_player(char *s, int *player, int idx)
 		{
 			if (*player == 1)
 				return (printf
-				("Error: player declared twice line %i column %i\n",
-				idx, i + 1),
-				0);
+					("Error: player declared twice line %i column %i\n",
+						idx, i + 1),
+					0);
 			else
 			{
 				*player = 1;
@@ -62,11 +62,11 @@ int	check_valid_player(char *s, int *player, int idx)
 
 char	get_char(char **file, int y, int x)
 {
-    if (y < 0 || !file[y] || x < 0 || x >= (int)ft_strlen(file[y]))
-        return (' ');
+	if (y < 0 || !file[y] || x < 0 || x >= (int)ft_strlen(file[y]))
+		return (' ');
 	else if (file[y][x] == '\n')
 		return (' ');
-    return (file[y][x]);
+	return (file[y][x]);
 }
 
 int	check_enclosed_by_wall(char **file)

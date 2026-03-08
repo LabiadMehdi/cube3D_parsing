@@ -20,13 +20,14 @@ t_map	*data_filler(char **file)
 	i = 0;
 	map = malloc(sizeof(t_map));
 	if (!map)
-		return (ft_free_tab(file), printf("Error: %s\n", strerror(errno)), NULL);
+		return (ft_free_tab(file),
+			printf("Error: %s\n", strerror(errno)), NULL);
 	set_map(map);
 	while (parse_elements(file[i], map, i))
 		i++;
 	if (!check_parsed_elements(map))
 		return (printf("Error: map informations are incomplet\n"),
-		free_map(map), NULL);
+			free_map(map), NULL);
 	if (!parse_map(file + i, i + 1, map))
 		return (free_map(map), NULL);
 	return (map);

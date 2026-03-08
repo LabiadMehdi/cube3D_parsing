@@ -24,8 +24,9 @@ int	check_arr_size(char **arr)
 
 int	is_num(char *s)
 {
-	int i = 0;
-	
+	int	i;
+
+	i = 0;
 	if (!s[i])
 		return (0);
 	while (s[i])
@@ -44,7 +45,7 @@ int	check_range(char **arr)
 	int	b;
 
 	if (!is_num(arr[0]) || !is_num(arr[1]) || !is_num(arr[2]))
-        return (0);
+		return (0);
 	r = ft_atoi(arr[0]);
 	g = ft_atoi(arr[1]);
 	b = ft_atoi(arr[2]);

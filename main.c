@@ -6,13 +6,13 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 13:53:14 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/08 17:41:37 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/08 18:40:32 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/parser.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	char	*filename;
 	char	**content;
