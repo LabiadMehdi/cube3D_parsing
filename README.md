@@ -66,5 +66,5 @@ C 225,30,0
 ## Resources
 
 - [Lode's Raycasting Tutorial](https://lodev.org/cgtutor/raycasting.html) the reference guide used to understand and implement the raycasting engine
-- [42 School Subject] official project guidelines
-- [AI] AI was used for research purposes and generating tests for map parsing
+- 42 School Subject official project guidelines
+- AI was used for research purposes and generating tests for map parsing
