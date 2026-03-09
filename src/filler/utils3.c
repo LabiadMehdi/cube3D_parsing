@@ -33,7 +33,7 @@ int	check_valid_char(char *s, int idx)
 	return (1);
 }
 
-int	check_valid_player(char *s, int *player, int idx)
+int	check_valid_player(char *s, int *player, int idx, t_map *map)
 {
 	int		i;
 	char	c;
@@ -51,7 +51,8 @@ int	check_valid_player(char *s, int *player, int idx)
 					0);
 			else
 			{
-				*player = 1;
+				map->dir = c;
+				*player = i;
 				break ;
 			}
 		}

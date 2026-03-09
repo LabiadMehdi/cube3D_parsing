@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 13:53:14 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/08 23:09:23 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/09 09:30:23 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ void	print_map(t_map *map)
 	printf("%i\n", map->floor);
 	printf("%i\n", map->ceiling);
 	print_arr(map->map);
-	printf("\n%i\n", map->map_w);
-	printf("%i\n", map->map_h);
+	printf("\n%i\n", map->pos_x);
+	printf("%i\n", map->pos_y);
+	printf("%c\n", map->dir);
 }
 
 int	main(int ac, char **av)

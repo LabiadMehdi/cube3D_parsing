@@ -6,7 +6,7 @@
 /*   By: ellabiad <ellabiad@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:03:48 by ellabiad          #+#    #+#             */
-/*   Updated: 2026/03/08 17:07:22 by ellabiad         ###   ########.fr       */
+/*   Updated: 2026/03/09 09:23:46 by ellabiad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ typedef struct s_map
 	char	**map;
 	int		map_w;
 	int		map_h;
-	// double	pos_x;
-	// double	pos_y;
+	int		pos_x;
+	int		pos_y;
+	char	dir;
 	// double	dir_x;
 	// double	dir_y;
 	// double	plane_x;
@@ -65,7 +66,7 @@ int		arr_size(char **arr);
 char	*pad_line(char *line, int map_width);
 
 //-- Filler Utils 3
-int		check_valid_player(char *s, int *player, int idx);
+int		check_valid_player(char *s, int *player, int idx, t_map *map);
 int		check_valid_char(char *s, int idx);
 int		check_enclosed_by_wall(char **file);
 

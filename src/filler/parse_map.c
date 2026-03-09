@@ -12,29 +12,38 @@
 
 #include "../../include/parser.h"
 
-int	is_valid_map_lcp(char *s, int idx, int *player)
+int	is_valid_map_lcp(char *s, int idx, int *player, t_map *map)
 {
 	if (check_empty_line(s))
 		return (printf("Error: empty line at line %i\n", idx), 0);
 	if (!check_valid_char(s, idx))
 		return (0);
-	if (!check_valid_player(s, player, idx))
+	if (!check_valid_player(s, player, idx, map))
 		return (0);
 	return (1);
 }
 
-int	is_valid_map(char **file, int start)
+int	is_valid_map(char **file, int start, t_map *map)
 {
 	int	i;
+	int	j;
 	int	player;
 
 	i = 0;
+	j = 0;
 	player = 0;
 	while (file[i])
 	{
-		if (!is_valid_map_lcp(file[i], i + start, &player))
+		if (!is_valid_map_lcp(file[i], i + start, &player, map))
 			return (0);
+		if (player && j == 0)
+			j = i;
 		i++;
+	}
+	if (player)
+	{
+		map->pos_y = j;
+		map->pos_x = player;
 	}
 	if (player == 0)
 		return (printf("Error: no player on the map\n"), 0);
@@ -49,7 +58,7 @@ int	parse_map(char **file, int start, t_map *map)
 	int		i;
 	int		longest_line;
 
-	if (!is_valid_map(file, start))
+	if (!is_valid_map(file, start, map))
 		return (0);
 	parsed_map = malloc(sizeof(char *) * (arr_size(file) + 1));
 	if (!parsed_map)
